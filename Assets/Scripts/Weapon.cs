@@ -22,6 +22,7 @@ public class Weapon : MonoBehaviour
         {
             Transform obj = Instantiate(bullet, pivot.position, transform.rotation);
             obj.right = Vector2.right * side;
+
         }
     }
 }
