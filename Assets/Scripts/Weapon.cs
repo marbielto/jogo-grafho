@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
-{
+{   
+    public Animator anim;
     int side = -1;
     public Transform bullet;
     public Transform pivot;
@@ -19,9 +20,11 @@ public class Weapon : MonoBehaviour
         transform.localScale = Vector2.right * side;
 
         if (Input.GetKeyDown(KeyCode.Space))
-        {
+        {   
+            anim.SetTrigger("attack");
             Transform obj = Instantiate(bullet, pivot.position, transform.rotation);
             obj.right = Vector2.right * side;
+            
 
         }
     }

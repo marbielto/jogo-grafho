@@ -27,6 +27,11 @@ public class GameManagerScript : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            quit();
+        }
     }
 
     public void gameOver()
@@ -45,5 +50,7 @@ public class GameManagerScript : MonoBehaviour
     public void quit()
     {
         Application.Quit();
+        
     }
+
 }
