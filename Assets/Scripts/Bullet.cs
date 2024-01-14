@@ -18,6 +18,7 @@ public class Bullet : MonoBehaviour
         {
             
             collision.gameObject.GetComponent<MoveEnemie>().itsDied();
+            Score.scoreCount += 1;
             
         }
 

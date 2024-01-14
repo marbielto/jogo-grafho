@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator anim;
     public float speed;
     private SpriteRenderer playerFlip;
+    public GameManagerScript gameManager;
 
     void Start()
     {
@@ -48,5 +49,18 @@ public class PlayerMovement : MonoBehaviour
         transform.position = transform.position + movement * speed * Time.deltaTime;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       
+        if(collision.gameObject.tag == "Enemy")
+        {   
+            gameObject.SetActive(false);
+            gameManager.gameOver();
+
+            
+        }
+    }
+
+        
   
 }

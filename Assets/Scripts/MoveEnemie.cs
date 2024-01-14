@@ -6,6 +6,7 @@ public class MoveEnemie : MonoBehaviour
 {   
     public Transform target;
     private SpriteRenderer sr;
+    
 
     void Start()
     {
@@ -18,14 +19,14 @@ public class MoveEnemie : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target.position, 3 * Time.deltaTime);
         if(transform.position.x <= target.transform.position.x)
         {
-            sr.flipX = false;
+            sr.flipX = true;
         }
         if(transform.position.x > target.transform.position.x)
         {
-            sr.flipX = true;
+            sr.flipX = false;
         }
     }
-
+    
     public void itsDied()
     {
         Destroy(gameObject);
